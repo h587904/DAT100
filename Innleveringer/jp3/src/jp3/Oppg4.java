@@ -1,9 +1,12 @@
 package jp3;
 
+import static javax.swing.JOptionPane.showInputDialog;
+
 public class Oppg4 {
 
 	public static void main(String[] args) {
-		int inntekt = 180800;
+	
+		int inntekt = Integer.parseInt(showInputDialog("Inntekt:"));
 		double sats = 0;
 		
 		if (inntekt <= 180800) {

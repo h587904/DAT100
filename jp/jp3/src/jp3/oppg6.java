@@ -2,7 +2,7 @@ package jp3;
 
 import static javax.swing.JOptionPane.*;
 
-public class oppg6 {
+public class Oppg6 {
 
 	public static void main(String[] args) {
 

@@ -3,12 +3,34 @@ package jp3;
 import static javax.swing.JOptionPane.showInputDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
 
-public class oppg5 {
+public class Oppg5 {
+
+	public static void main(String[] args) {
+
+		int poeng = -1;
+
+		for(int i = 0; i < 10; i++) {
+			do {
+				String poengString = showInputDialog("Poeng:");
+				if(!poengString.isEmpty()) {
+					poeng = Integer.parseInt(poengString);
+					String karakter = karakter(poeng);
+					System.out.println(karakter);
+				}
+				
+				if (poeng < 0 || poeng > 100 || poengString == "") {
+					showMessageDialog(null,"Ugyldig poengsum");
+					System.out.println("Ugyldig poengsum");
+				}
 	
-	
-	public static String poengTilKarakter(int poeng) {
+			} while(poeng < 0 || poeng > 100);
+		}
 		
-		String karakter;
+	}
+	
+	private static String karakter(int poeng) {
+		String karakter = "";
+		
 		if ((poeng >= 0) && (poeng <= 39)) {
 			karakter = "F";
 		}
@@ -28,27 +50,9 @@ public class oppg5 {
 			karakter = "A";
 		}
 		else {
-			karakter = null;
+			karakter = "Ugyldig poengsum";
 		}
-
 		return karakter;
 	}
 
-	public static void main(String[] args) {
-		int poeng = 0;
-		int i = 0;
-		do {
-			poeng = Integer.parseInt(showInputDialog("Heltall"));
-			if (poeng >= 0 && poeng <= 100) {
-				String karakter = poengTilKarakter(poeng);
-				showMessageDialog(null, "Karakter: " + karakter);
-			} else {
-				showMessageDialog(null, "Ugyldig poengsum.");
-				i--;
-			}
-			i++;
-			
-		} while (i != 10);
-		
-	}
 }
